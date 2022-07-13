@@ -15,6 +15,9 @@ COPY .github/workflows/*.R /tmp_setup/
 COPY .github/workflows/*.sh /tmp_setup/
 RUN chmod ugo+x /tmp_setup/*.sh
 
+# Install CRAN packages
+RUN R --no-save -e "source('/tmp_setup/install_packages.R')"
+
 # Install OSP R packages
 RUN /tmp_setup/install_packages.sh ${re_version}
 
