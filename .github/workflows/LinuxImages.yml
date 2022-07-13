@@ -7,13 +7,14 @@ on:
 jobs:
   build:
     strategy:
+        fail-fast: ${{ github.event_name == 'release' }}
         matrix:
-            r_version: [3.6.3] #[3.6.3, 4.1.0]
+            r_version: [3.6.3, 4.1.0]
             os_version: [centos7, bionic]
     runs-on: ubuntu-latest
     env:
-        OSPSUITE_R_VERSION: 10.0.25
-        REPORTINGENGINE_VERSION: 1.2.40
+        OSPSUITE_R_VERSION: 11.0.123
+        REPORTINGENGINE_VERSION: 2.0.189
     steps:
       - name: Checkout
         uses: actions/checkout@v2
