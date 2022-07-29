@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
         OSPSUITE_R_VERSION: 11.0.123
-        REPORTINGENGINE_VERSION: 2.0.189
+        REPORTINGENGINE_VERSION: 2.0.191
     steps:
       - name: Checkout
         uses: actions/checkout@v2
