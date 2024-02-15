@@ -31,10 +31,10 @@ jobs:
             os_version=${{ matrix.os_version }}
             ospsuite_r_version=${{ env.OSPSUITE_R_VERSION }}
             re_version=${{ env.REPORTINGENGINE_VERSION }}
-          push: false
+          push: true
           tags: |
             ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:${{ env.REPORTINGENGINE_VERSION }}
             ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:latest
-          labels: |
-            ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:${{ env.REPORTINGENGINE_VERSION }}
-            ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:latest
+#          labels: |
+#            ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:${{ env.REPORTINGENGINE_VERSION }}
+#            ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:latest
