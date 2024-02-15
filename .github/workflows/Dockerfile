@@ -6,6 +6,7 @@ FROM ghcr.io/open-systems-pharmacology/ospsuite-r${r_version}-${os_version}:${os
 
 # Args are resetted by FROM! s. https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
 ARG re_version
+ARG os_version
 
 ENTRYPOINT ["sh"]
 
