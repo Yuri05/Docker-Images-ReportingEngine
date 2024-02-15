@@ -16,13 +16,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: .github/workflows/Dockerfile
@@ -33,5 +33,8 @@ jobs:
             re_version=${{ env.REPORTINGENGINE_VERSION }}
           push: false
           tags: |
+            ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:${{ env.REPORTINGENGINE_VERSION }}
+            ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:latest
+          labels: |
             ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:${{ env.REPORTINGENGINE_VERSION }}
             ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:latest

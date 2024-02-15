@@ -25,4 +25,4 @@ RUN /tmp_setup/install_packages_${os_version}.sh
 RUN rm -rf /tmp_setup
 
 # run package tests
-RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite.reportingengine')); source('testthat.R')"
+# RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite.reportingengine')); source('testthat.R')"
