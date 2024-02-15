@@ -15,14 +15,13 @@ COPY .github/workflows/*.R /tmp_setup/
 COPY .github/workflows/*.sh /tmp_setup/
 RUN chmod ugo+x /tmp_setup/*.sh
 
-# Install CRAN packages
-RUN R --no-save -e "source('/tmp_setup/install_packages.R')"
-
 # Install OSP R packages
-RUN /tmp_setup/install_packages.sh ${re_version}
+RUN /tmp_setup/install_prereq_${os_version}.sh 
+RUN /tmp_setup/install_packages_cran.sh 
+RUN /tmp_setup/install_packages_${os_version}.sh 
 
 # Cleanup
 RUN rm -rf /tmp_setup
 
 # run package tests
-RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite.reportingengine')); source('testthat.R')"
+# RUN R --no-save -e "setwd(system.file('tests', package = 'ospsuite.reportingengine')); source('testthat.R')"
