@@ -33,5 +33,5 @@ jobs:
             re_version=${{ env.REPORTINGENGINE_VERSION }}
           push: false
           tags: |
-            ghcr.io/Yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:${{ env.REPORTINGENGINE_VERSION }}
-            ghcr.io/Yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:latest
+            ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:${{ env.REPORTINGENGINE_VERSION }}
+            ghcr.io/yuri05/reporting.engine-r${{ matrix.r_version }}-${{ matrix.os_version }}:latest
