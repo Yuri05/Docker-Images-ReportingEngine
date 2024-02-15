@@ -6,8 +6,8 @@ jobs:
     strategy:
         fail-fast: ${{ github.event_name == 'release' }}
         matrix:
-            r_version: 4.1.0 #[3.6.3, 4.1.0]
-            os_version: bionic #[centos7, bionic]
+            r_version: 4.1.0 
+            os_version: bionic 
     runs-on: ubuntu-latest
     env:
         OSPSUITE_R_VERSION: 11.0.123
